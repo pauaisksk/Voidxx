@@ -5,40 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voidx - Читы для Roblox</title>
     <style>
-        /* Общие стили */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Основной стиль */
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #141414, #2c2c2c);
+            margin: 0;
+            padding: 0;
+            background: #121212;
             color: #f5f5f5;
             line-height: 1.6;
-            font-size: 16px;
+            overflow-x: hidden;
         }
-
+        
         /* Фон и стиль заголовка */
         header {
             background: linear-gradient(135deg, #ff6347, #ff1493);
-            padding: 60px 0;
+            padding: 40px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
         }
 
         header h1 {
-            font-size: 60px;
-            color: #ffffff;
+            font-size: 50px;
+            color: white;
+            margin: 0;
             text-transform: uppercase;
             letter-spacing: 5px;
-            text-shadow: 0 0 15px rgba(255, 99, 71, 1), 0 0 25px rgba(255, 99, 71, 0.5);
+        }
+
+        header h1:hover {
+            text-shadow: 0 0 15px rgba(255, 99, 71, 1), 0 0 20px rgba(255, 99, 71, 0.8);
+            transform: scale(1.05);
         }
 
         /* Навигация */
         nav {
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         nav a {
@@ -47,43 +49,62 @@
             font-size: 18px;
             margin: 0 25px;
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ffeb3b;
+            transition: width 0.3s ease;
         }
 
         nav a:hover {
             color: #ffeb3b;
         }
 
+        nav a:hover::after {
+            width: 100%;
+        }
+
         /* Секции */
         section {
-            padding: 60px 20px;
+            padding: 40px 20px;
             margin: 30px auto;
             max-width: 1200px;
             background-color: #1f1f1f;
-            border-radius: 15px;
+            border-radius: 10px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
 
         section h2 {
-            font-size: 40px;
+            font-size: 35px;
             color: #ff6347;
             text-align: center;
             border-bottom: 3px solid #ff6347;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            font-weight: bold;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
         }
 
         /* Видео */
         .video-container {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         iframe {
             width: 100%;
             max-width: 950px;
             height: 500px;
-            border-radius: 15px;
+            border-radius: 10px;
             border: none;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
@@ -99,7 +120,7 @@
             font-weight: bold;
             border-radius: 30px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            margin-top: 40px;
+            transition: all 0.3s ease-in-out;
         }
 
         .download-btn:hover {
@@ -108,10 +129,42 @@
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
         }
 
-        footer {
-            background-color: #111;
+        /* Карточки функций */
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: #333;
+            border-radius: 10px;
             padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            color: #ff6347;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        .feature-card:hover {
+            background-color: #444;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
             text-align: center;
+            padding: 20px;
+            background-color: #111;
             color: #aaa;
             font-size: 14px;
         }
@@ -127,30 +180,67 @@
     </style>
 </head>
 <body>
+    <header>
+        <h1>Voidx - Читы для Roblox</h1>
+        <nav>
+            <a href="#about">Описание</a>
+            <a href="#features">Функции</a>
+            <a href="#installation">Установка</a>
+            <a href="#video">Видео</a>
+            <a href="#download">Скачать</a>
+        </nav>
+    </header>
 
-<header>
-    <h1>Voidx - Читы для Roblox</h1>
-    <nav>
-        <a href="#">Главная</a>
-        <a href="#">О нас</a>
-        <a href="#">Контакты</a>
-    </nav>
-</header>
+    <section id="about">
+        <h2>Что такое Voidx?</h2>
+        <p>Voidx — это один из самых мощных читов для Roblox, который позволяет игрокам получить доступ к функциям, недоступным обычным пользователям. С помощью Voidx вы сможете включить авто-кликер, ESP для поиска врагов и многое другое. Повысьте свой игровой опыт с этим инструментом!</p>
+    </section>
 
-<section>
-    <h2>Наши функции</h2>
-    <p>Мы предоставляем самые лучшие читы для Roblox, чтобы улучшить ваш игровой опыт!</p>
-</section>
+    <section id="features">
+        <h2>Функции Voidx</h2>
+        <div class="features-list">
+            <div class="feature-card">
+                <h3>Автокликер</h3>
+                <p>Автоматическое выполнение действий в игре, идеальный инструмент для фарминга.</p>
+            </div>
+            <div class="feature-card">
+                <h3>ESP для Roblox</h3>
+                <p>Используйте ESP для нахождения противников и других игроков в Roblox.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Автозапуск</h3>
+                <p>Настройка автоматического выполнения задач для быстрого прогресса в игре.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Множество скриптов</h3>
+                <p>Поддержка множества различных скриптов для расширенной функциональности.</p>
+            </div>
+        </div>
+    </section>
 
-<div class="video-container">
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allowfullscreen></iframe>
-</div>
+    <section id="installation">
+        <h2>Как установить Voidx</h2>
+        <ol>
+            <li>Перейдите по ссылке для скачивания.</li>
+            <li>Скачайте и установите Voidx.</li>
+            <li>Запустите Roblox и активируйте читы.</li>
+            <li>Используйте Voidx для улучшения игрового процесса!</li>
+        </ol>
+    </section>
 
-<a href="#" class="download-btn">Скачать</a>
+    <section id="video">
+        <h2>Видеообзор Voidx</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/wru-SkDC9Po?si=Vn5hxOdm9fvEVgn9" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
 
-<footer>
-    <p>&copy; 2024 Voidx. Все права защищены. <a href="#">Политика конфиденциальности</a></p>
-</footer>
+    <section id="download">
+        <h2>Скачать Voidx</h2>
+        <a href="https://drive.google.com/drive/folders/1gPYICXv5d9cNgdc0oEH70HKZmd1UOEy8" class="download-btn" target="_blank">Скачать с Google Drive</a>
+    </section>
 
-</body>
-</html>
+    <footer>
+        <p>© 2024 Voidx. Все права защищены. <br>Этот сайт не связан с официальным Roblox.</p>
+        <p><a href="https://drive.google.com/drive/folders/1gPYICXv5d9cNgdc0oEH70HKZmd1UOEy8">Скачать файл</
+
