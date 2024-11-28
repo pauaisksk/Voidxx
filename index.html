@@ -6,41 +6,47 @@
     <title>Voidx - Читы для Roblox</title>
     <style>
         /* Основной стиль */
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background: #121212;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #141414, #2c2c2c);
             color: #f5f5f5;
             line-height: 1.6;
             overflow-x: hidden;
+            font-size: 16px;
         }
-        
+
         /* Фон и стиль заголовка */
         header {
             background: linear-gradient(135deg, #ff6347, #ff1493);
-            padding: 40px;
+            padding: 60px 0;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease-in-out;
+            position: relative;
         }
 
         header h1 {
-            font-size: 50px;
-            color: white;
+            font-size: 60px;
+            color: #ffffff;
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 5px;
+            text-shadow: 0 0 15px rgba(255, 99, 71, 1), 0 0 25px rgba(255, 99, 71, 0.5);
         }
 
         header h1:hover {
-            text-shadow: 0 0 15px rgba(255, 99, 71, 1), 0 0 20px rgba(255, 99, 71, 0.8);
             transform: scale(1.05);
         }
 
         /* Навигация */
         nav {
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         nav a {
@@ -77,34 +83,41 @@
 
         /* Секции */
         section {
-            padding: 40px 20px;
+            padding: 60px 20px;
             margin: 30px auto;
             max-width: 1200px;
             background-color: #1f1f1f;
-            border-radius: 10px;
+            border-radius: 15px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        section:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-5px);
         }
 
         section h2 {
-            font-size: 35px;
+            font-size: 40px;
             color: #ff6347;
             text-align: center;
             border-bottom: 3px solid #ff6347;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-weight: bold;
         }
 
         /* Видео */
         .video-container {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
         iframe {
             width: 100%;
             max-width: 950px;
             height: 500px;
-            border-radius: 10px;
+            border-radius: 15px;
             border: none;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
@@ -121,6 +134,7 @@
             border-radius: 30px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease-in-out;
+            margin-top: 40px;
         }
 
         .download-btn:hover {
@@ -138,7 +152,7 @@
 
         .feature-card {
             background: #333;
-            border-radius: 10px;
+            border-radius: 15px;
             padding: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -147,7 +161,7 @@
         .feature-card h3 {
             font-size: 24px;
             color: #ff6347;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .feature-card p {
@@ -161,10 +175,73 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
-        footer {
+        /* Отзывы */
+        .reviews {
+            background-color: #1f1f1f;
+            padding: 60px 20px;
+            margin: 30px auto;
+            border-radius: 15px;
+            max-width: 1200px;
+        }
+
+        .reviews h2 {
+            font-size: 40px;
+            color: #ff6347;
             text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .review-card {
+            background-color: #333;
+            border-radius: 10px;
             padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .review-card h3 {
+            color: #ff6347;
+            margin-bottom: 10px;
+        }
+
+        .review-card p {
+            color: #ddd;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 60px 20px;
+            margin: 30px auto;
+            max-width: 1200px;
+            background-color: #1f1f1f;
+            border-radius: 15px;
+        }
+
+        .faq h2 {
+            font-size: 40px;
+            color: #ff6347;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h3 {
+            font-size: 24px;
+            color: #ff6347;
+        }
+
+        .faq-item p {
+            color: #ddd;
+            font-size: 16px;
+        }
+
+        footer {
             background-color: #111;
+            padding: 20px;
+            text-align: center;
             color: #aaa;
             font-size: 14px;
         }
@@ -177,6 +254,21 @@
         footer a:hover {
             color: #ffeb3b;
         }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 50px;
+            }
+
+            section h2 {
+                font-size: 32px;
+            }
+
+            .download-btn {
+                font-size: 20px;
+                padding: 15px 30px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -188,59 +280,12 @@
             <a href="#installation">Установка</a>
             <a href="#video">Видео</a>
             <a href="#download">Скачать</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#faq">FAQ</a>
         </nav>
     </header>
 
     <section id="about">
         <h2>Что такое Voidx?</h2>
-        <p>Voidx — это один из самых мощных читов для Roblox, который позволяет игрокам получить доступ к функциям, недоступным обычным пользователям. С помощью Voidx вы сможете включить авто-кликер, ESP для поиска врагов и многое другое. Повысьте свой игровой опыт с этим инструментом!</p>
-    </section>
-
-    <section id="features">
-        <h2>Функции Voidx</h2>
-        <div class="features-list">
-            <div class="feature-card">
-                <h3>Автокликер</h3>
-                <p>Автоматическое выполнение действий в игре, идеальный инструмент для фарминга.</p>
-            </div>
-            <div class="feature-card">
-                <h3>ESP для Roblox</h3>
-                <p>Используйте ESP для нахождения противников и других игроков в Roblox.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Автозапуск</h3>
-                <p>Настройка автоматического выполнения задач для быстрого прогресса в игре.</p>
-            </div>
-            <div class="feature-card">
-                <h3>Множество скриптов</h3>
-                <p>Поддержка множества различных скриптов для расширенной функциональности.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="installation">
-        <h2>Как установить Voidx</h2>
-        <ol>
-            <li>Перейдите по ссылке для скачивания.</li>
-            <li>Скачайте и установите Voidx.</li>
-            <li>Запустите Roblox и активируйте читы.</li>
-            <li>Используйте Voidx для улучшения игрового процесса!</li>
-        </ol>
-    </section>
-
-    <section id="video">
-        <h2>Видеообзор Voidx</h2>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/wru-SkDC9Po?si=Vn5hxOdm9fvEVgn9" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <section id="download">
-        <h2>Скачать Voidx</h2>
-        <a href="https://drive.google.com/drive/folders/1gPYICXv5d9cNgdc0oEH70HKZmd1UOEy8" class="download-btn" target="_blank">Скачать с Google Drive</a>
-    </section>
-
-    <footer>
-        <p>© 2024 Voidx. Все права защищены. <br>Этот сайт не связан с официальным Roblox.</p>
-        <p><a href="https://drive.google.com/drive/folders/1gPYICXv5d9cNgdc0oEH70HKZmd1UOEy8">Скачать файл</
+        <p>Voidx — это один из самых мощных читов для Roblox, который предоставляет игрокам доступ к возможностям, которые недоступны обычным пользователям. С Voidx можно использовать такие функции как авто-кликер,
 
