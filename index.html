@@ -20,6 +20,7 @@
             overflow-x: hidden;
             font-size: 16px;
             transition: background-color 0.3s ease-in-out;
+            opacity: 1;
         }
 
         /* Фон и стиль заголовка */
@@ -95,11 +96,13 @@
             transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(50px);
+            visibility: hidden;
         }
 
         section.visible {
             opacity: 1;
             transform: translateY(0);
+            visibility: visible;
         }
 
         section:hover {
@@ -289,9 +292,4 @@
         }
 
         footer a:hover {
-            color: #ffeb3b;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 50px;
+            color: #ffeb3b
