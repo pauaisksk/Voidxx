@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voidx - Читы для Roblox</title>
     <style>
-        /* Основной стиль */
+        /* Общие стили */
         * {
             margin: 0;
             padding: 0;
@@ -17,10 +17,7 @@
             background: linear-gradient(to right, #141414, #2c2c2c);
             color: #f5f5f5;
             line-height: 1.6;
-            overflow-x: hidden;
             font-size: 16px;
-            transition: background-color 0.3s ease-in-out;
-            opacity: 1;
         }
 
         /* Фон и стиль заголовка */
@@ -29,22 +26,14 @@
             padding: 60px 0;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease-in-out;
-            position: relative;
-            z-index: 10;
         }
 
         header h1 {
             font-size: 60px;
             color: #ffffff;
-            margin: 0;
             text-transform: uppercase;
             letter-spacing: 5px;
             text-shadow: 0 0 15px rgba(255, 99, 71, 1), 0 0 25px rgba(255, 99, 71, 0.5);
-        }
-
-        header h1:hover {
-            transform: scale(1.05);
         }
 
         /* Навигация */
@@ -58,31 +47,10 @@
             font-size: 18px;
             margin: 0 25px;
             font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            display: inline-block;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: #ffeb3b;
-            transition: width 0.3s ease;
         }
 
         nav a:hover {
             color: #ffeb3b;
-            transform: translateY(-5px);
-        }
-
-        nav a:hover::after {
-            width: 100%;
         }
 
         /* Секции */
@@ -93,21 +61,6 @@
             background-color: #1f1f1f;
             border-radius: 15px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(50px);
-            visibility: hidden;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-            visibility: visible;
-        }
-
-        section:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            transform: translateY(-5px);
         }
 
         section h2 {
@@ -124,9 +77,6 @@
         .video-container {
             text-align: center;
             margin-top: 50px;
-            opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.5s ease-in-out;
         }
 
         iframe {
@@ -149,133 +99,13 @@
             font-weight: bold;
             border-radius: 30px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease-in-out;
             margin-top: 40px;
-            transform: translateY(10px);
         }
 
         .download-btn:hover {
             background: linear-gradient(45deg, #ff1493, #ff6347);
             transform: translateY(-5px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
-        }
-
-        /* Карточки функций */
-        .features-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.5s ease-in-out;
-        }
-
-        .feature-card {
-            background: #333;
-            border-radius: 15px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .feature-card h3 {
-            font-size: 24px;
-            color: #ff6347;
-            margin-bottom: 15px;
-        }
-
-        .feature-card p {
-            font-size: 16px;
-            color: #ddd;
-        }
-
-        .feature-card:hover {
-            background-color: #444;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Эффект появления элементов при прокрутке */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.5s ease-in-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Отзывы */
-        .reviews {
-            background-color: #1f1f1f;
-            padding: 60px 20px;
-            margin: 30px auto;
-            border-radius: 15px;
-            max-width: 1200px;
-        }
-
-        .reviews h2 {
-            font-size: 40px;
-            color: #ff6347;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .review-card {
-            background-color: #333;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.3s ease;
-        }
-
-        .review-card.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .review-card h3 {
-            color: #ff6347;
-            margin-bottom: 10px;
-        }
-
-        .review-card p {
-            color: #ddd;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 60px 20px;
-            margin: 30px auto;
-            max-width: 1200px;
-            background-color: #1f1f1f;
-            border-radius: 15px;
-        }
-
-        .faq h2 {
-            font-size: 40px;
-            color: #ff6347;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-        }
-
-        .faq-item h3 {
-            font-size: 24px;
-            color: #ff6347;
-        }
-
-        .faq-item p {
-            color: #ddd;
-            font-size: 16px;
         }
 
         footer {
@@ -292,4 +122,35 @@
         }
 
         footer a:hover {
-            color: #ffeb3b
+            color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Voidx - Читы для Roblox</h1>
+    <nav>
+        <a href="#">Главная</a>
+        <a href="#">О нас</a>
+        <a href="#">Контакты</a>
+    </nav>
+</header>
+
+<section>
+    <h2>Наши функции</h2>
+    <p>Мы предоставляем самые лучшие читы для Roblox, чтобы улучшить ваш игровой опыт!</p>
+</section>
+
+<div class="video-container">
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allowfullscreen></iframe>
+</div>
+
+<a href="#" class="download-btn">Скачать</a>
+
+<footer>
+    <p>&copy; 2024 Voidx. Все права защищены. <a href="#">Политика конфиденциальности</a></p>
+</footer>
+
+</body>
+</html>
